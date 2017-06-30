@@ -1,0 +1,33 @@
+#!/bin/bash
+
+RUN_DIR=/var/vcap/sys/run/dafs-server
+LOG_DIR=/var/vcap/sys/log/dafs-server
+PIDFILE=${RUN_DIR}/pid
+
+case $1 in
+
+  start)
+    mkdir -p $RUN_DIR $LOG_DIR
+    chown -R vcap:vcap $RUN_DIR $LOG_DIR
+
+    echo $$ > $PIDFILE
+
+    cd /var/vcap/packages/dafs
+
+    export DAFS=/var/vcap/packages/dafs-server
+    export PATH=$PATH:$DAFS/bin
+
+    exec /var/vcap/packages/dafs-server/bin/dafs-server --port=9001
+
+    ;;
+
+  stop)
+    kill -9 `cat $PIDFILE`
+    rm -f $PIDFILE
+
+    ;;
+
+  *)
+    echo "Usage: ctl {start|stop}" ;;
+
+esac

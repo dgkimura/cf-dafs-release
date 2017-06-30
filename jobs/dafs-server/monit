@@ -1,0 +1,5 @@
+check process dafs-server
+  with pidfile /var/vcap/sys/run/dafs-server/pid
+  start program "/var/vcap/jobs/dafs-server/bin/ctl start"
+  stop program "/var/vcap/jobs/dafs-server/bin/ctl stop"
+  group vcap

@@ -1,0 +1,3 @@
+[submodule "src/dafs"]
+	path = src/dafs
+	url = https://github.com/dgkimura/dafs.git
