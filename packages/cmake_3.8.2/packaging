@@ -1,0 +1,7 @@
+set -e
+
+tar xzf cmake_3.8.2/cmake-3.8.2.tar.gz
+pushd cmake_3.8.2
+  ./configure --prefix=${BOSH_INSTALL_TARGET}
+  make && make install
+popd
