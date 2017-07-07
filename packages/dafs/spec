@@ -1,0 +1,8 @@
+---
+name: dafs
+
+dependencies:
+- cmake_3.8.2
+
+files:
+- dafs/**/*

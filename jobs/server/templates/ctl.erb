@@ -1,7 +1,7 @@
 #!/bin/bash
 
-RUN_DIR=/var/vcap/sys/run/dafs-server
-LOG_DIR=/var/vcap/sys/log/dafs-server
+RUN_DIR=/var/vcap/sys/run/server
+LOG_DIR=/var/vcap/sys/log/server
 PIDFILE=${RUN_DIR}/pid
 
 case $1 in
@@ -14,10 +14,10 @@ case $1 in
 
     cd /var/vcap/packages/dafs
 
-    export DAFS=/var/vcap/packages/dafs-server
+    export DAFS=/var/vcap/packages/server
     export PATH=$PATH:$DAFS/bin
 
-    exec /var/vcap/packages/dafs-server/bin/dafs-server --port=9001
+    exec /var/vcap/packages/dafs/bin/dafs-server --port=9001
 
     ;;
 

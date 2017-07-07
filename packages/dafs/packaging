@@ -1,0 +1,13 @@
+# abort script on any command that exits with a non zero value
+set -e
+
+BIN_TARGET=${BOSH_INSTALL_TARGET}/bin
+mkdir ${BIN_TARGET}
+
+mkdir -p dafs/build && pushd dafs/build
+  /var/vcap/packages/cmake_3.8.2/bin/cmake .. && make
+  cp -a src/* ${BIN_TARGET}
+  cp -a dependencies/paxos/paxos-prefix/src/paxos-build/lib/* ${BIN_TARGET}
+  cp -a dependencies/paxos/paxos-prefix/src/paxos-build/dependencies/boost/boost-prefix/lib/* ${BIN_TARGET}
+  cp -a dependencies/diflib/diflib-prefix/src/diflib-build/* ${BIN_TARGET}
+popd
