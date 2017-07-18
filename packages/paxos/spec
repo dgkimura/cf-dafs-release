@@ -1,9 +1,9 @@
 ---
-name: dafs
+name: paxos
 
 dependencies:
 - cmake_3.8.2
-- paxos
+- boost_1.63.0
 
 files:
-- dafs/**/*
+- paxos/**/*
