@@ -5,7 +5,7 @@ BIN_TARGET=${BOSH_INSTALL_TARGET}/bin
 mkdir ${BIN_TARGET}
 
 mkdir -p dafs/build && pushd dafs/build
-  /var/vcap/packages/cmake_3.8.2/bin/cmake .. && make
+  /var/vcap/packages/cmake/bin/cmake .. && make
   cp -a src/* ${BIN_TARGET}
   cp -a dependencies/paxos/paxos-prefix/src/paxos-build/lib/* ${BIN_TARGET}
   cp -a dependencies/paxos/paxos-prefix/src/paxos-build/dependencies/boost/boost-prefix/lib/* ${BIN_TARGET}

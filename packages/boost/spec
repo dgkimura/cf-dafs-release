@@ -1,0 +1,7 @@
+---
+name: boost
+
+dependencies: []
+
+files:
+- boost/boost_1_63_0.tar.gz # From https://sourceforge.net/projects/boost/files/boost/1.63.0/boost_1_63_0.tar.gz

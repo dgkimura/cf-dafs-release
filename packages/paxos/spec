@@ -2,8 +2,8 @@
 name: paxos
 
 dependencies:
-- cmake_3.8.2
-- boost_1.63.0
+- cmake
+- boost
 
 files:
 - paxos/**/*

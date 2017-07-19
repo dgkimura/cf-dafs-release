@@ -1,1 +1,6 @@
---- {}
+boost/boost_1_63_0.tar.gz:
+  size: 97518330
+  sha: 2cecf1848a813de55e5770f324f084c568abca0a
+cmake/cmake-3.8.2.tar.gz:
+  size: 7504706
+  sha: c38aad7406d6cbd99a6c71922c6c3406f745c583
