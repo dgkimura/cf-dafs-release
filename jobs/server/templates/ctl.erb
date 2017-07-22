@@ -12,12 +12,12 @@ case $1 in
 
     echo $$ > $PIDFILE
 
-    cd /var/vcap/packages/dafs
+    cd /var/vcap/packages/dafs/bin
 
     export DAFS=/var/vcap/packages/server
     export PATH=$PATH:$DAFS/bin
 
-    exec /var/vcap/packages/dafs/bin/dafs-server --port=9001
+    exec sudo /var/vcap/packages/dafs/bin/dafs-server --port=9001
 
     ;;
 
@@ -31,3 +31,4 @@ case $1 in
     echo "Usage: ctl {start|stop}" ;;
 
 esac
+exit 0

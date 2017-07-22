@@ -2,12 +2,14 @@
 set -e
 
 BIN_TARGET=${BOSH_INSTALL_TARGET}/bin
+LIB_TARGET=/usr/lib
 mkdir ${BIN_TARGET}
 
 mkdir -p dafs/build && pushd dafs/build
   /var/vcap/packages/cmake/bin/cmake .. && make
   cp -a src/* ${BIN_TARGET}
-  cp -a dependencies/paxos/paxos-prefix/src/paxos-build/lib/* ${BIN_TARGET}
-  cp -a dependencies/paxos/paxos-prefix/src/paxos-build/dependencies/boost/boost-prefix/lib/* ${BIN_TARGET}
-  cp -a dependencies/diflib/diflib-prefix/src/diflib-build/* ${BIN_TARGET}
+  cp -a src/* ${BIN_TARGET}
+  cp -a dependencies/paxos/paxos-prefix/src/paxos-build/lib/* ${LIB_TARGET}
+  cp -a dependencies/paxos/paxos-prefix/src/paxos-build/dependencies/boost/boost-prefix/lib/* ${LIB_TARGET}
+  cp -a dependencies/diflib/diflib-prefix/src/diflib-build/* ${LIB_TARGET}
 popd
