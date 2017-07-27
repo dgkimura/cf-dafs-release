@@ -3,6 +3,7 @@
 RUN_DIR=/var/vcap/sys/run/server
 LOG_DIR=/var/vcap/sys/log/server
 PIDFILE=${RUN_DIR}/pid
+LIB_TARGET=/usr/lib
 
 case $1 in
 
@@ -13,6 +14,11 @@ case $1 in
     echo $$ > $PIDFILE
 
     cd /var/vcap/packages/dafs/bin
+
+    # Copy the library dependencies into the system library directory
+    sudo cp libpaxos.so ${LIB_TARGET}
+    sudo cp *.a ${LIB_TARGET}
+    ls | egrep '*so\.[0-9]+\.[0-9]+\.[0-9]+'| xargs sudo cp -t ${LIB_TARGET}
 
     export DAFS=/var/vcap/packages/server
     export PATH=$PATH:$DAFS/bin
