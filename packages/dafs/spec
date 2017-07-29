@@ -3,8 +3,6 @@ name: dafs
 
 dependencies:
 - cmake
-- paxos
-- boost
 
 files:
 - dafs/**/*

@@ -1,9 +1,0 @@
----
-name: paxos
-
-dependencies:
-- cmake
-- boost
-
-files:
-- paxos/**/*
