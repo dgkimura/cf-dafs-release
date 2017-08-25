@@ -23,7 +23,7 @@ case $1 in
     export DAFS=/var/vcap/packages/server
     export PATH=$PATH:$DAFS/bin
 
-    exec sudo /var/vcap/packages/dafs/bin/dafs-server --port=9001
+    exec sudo /var/vcap/packages/dafs/bin/dafs-server --address=<%= spec.ip %> --port=9001
 
     ;;
 
